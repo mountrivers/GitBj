@@ -5,8 +5,8 @@
 using namespace std;
 
 int n, t;
-int px[] = { 3,2,1,0,-1,-2,-3,-2,-1,0,1,2 };
-int py[] = { 0,-1,-2,-3,-2,-1,0,1,2,3,2,1 };
+int px[] = { 3,2,1,0,-1,-2,-3,-2,-1,0,1,2 ,1 , 0, -1, 0 };
+int py[] = { 0,-1,-2,-3,-2,-1,0,1,2,3,2,1 ,0 , 1, 0 , -1};
 queue<pair<int, int>> nextQue;
 
 vector<vector<int>> map;
@@ -16,7 +16,7 @@ void fun(int y, int x) {
 	
 	int tx, ty;
 	int present = dp[y][x];
-	for (int i = 0; i < 12; i++) {
+	for (int i = 0; i < 16; i++) {
 		tx = px[i] + x;
 		ty = py[i] + y;
 		if (ty < 0 || tx < 0 || ty >= n || tx >= n) continue;
@@ -55,7 +55,7 @@ int main() {
 	if (dMin > dp[n - 1][n - 3]) dMin = dp[n - 1][n - 3];
 
 	int oMin = dp[n - 2][n - 1];
-	if (oMin = dp[n - 1][n - 2]) oMin = dp[n - 1][n - 2];
+	if (oMin > dp[n - 1][n - 2]) oMin = dp[n - 1][n - 2];
 
 	if (dp[n - 1][n - 1] > dMin + t*2)
 		dp[n - 1][n - 1] = dMin + t*2;
