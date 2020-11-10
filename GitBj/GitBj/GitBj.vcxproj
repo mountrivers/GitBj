@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="14461.cpp" />
+    <ClCompile Include="1540.cpp" />
     <ClCompile Include="GitBj.cpp" />
     <ClCompile Include="15565.cpp" />
   </ItemGroup>
